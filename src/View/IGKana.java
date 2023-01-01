@@ -3,7 +3,12 @@ import javax.swing.*;
 
 import Controller.QC_Complete;
 import Controller.QuestionController;
+import Model.FormatQuestion.FQ_AlphaToHiragana;
+import Model.FormatQuestion.FQ_AlphaToKana;
+import Model.FormatQuestion.FQ_AlphaToKatakana;
 import Model.FormatQuestion.FQ_HiraganaToAlpha;
+import Model.FormatQuestion.FQ_KanaToAlpha;
+import Model.FormatQuestion.FQ_KatakanaToAlpha;
 import Model.FormatQuestion.FormatQuestion;
 
 import java.awt.*;
@@ -231,11 +236,11 @@ public class IGKana extends JFrame implements KanaView {
 
         //Format
         if(format.equals("hta")) fq = new FQ_HiraganaToAlpha();
-        else if(format.equals("ath")) System.out.println("Format : Alpha -> Hiragana");
-        else if(format.equals("kta")) System.out.println("Format : Katakana -> Alpha");
-        else if(format.equals("atk")) System.out.println("Format : Alpha -> Katakana");
-        else if(format.equals("at*")) System.out.println("Format : Alpha -> Kana");
-        else if(format.equals("*ta")) System.out.println("Format : Kana -> Alpha");
+        else if(format.equals("ath")) fq = new FQ_AlphaToHiragana();
+        else if(format.equals("kta")) fq = new FQ_KatakanaToAlpha();
+        else if(format.equals("atk")) fq = new FQ_AlphaToKatakana();
+        else if(format.equals("at*")) fq = new FQ_AlphaToKana();
+        else if(format.equals("*ta")) fq = new FQ_KanaToAlpha();
         else if(format.equals("hvk")) System.out.println("Format : Hiragana <-> Katakana");
         
 
