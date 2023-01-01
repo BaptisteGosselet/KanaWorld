@@ -53,7 +53,7 @@ public class IGKana extends JFrame implements KanaView {
         Color color_of_border = new Color(93,56,36);
         Color background_color_of_border = Color.WHITE;
         Font letter_in_borer_font = new Font("Monospaced", Font.BOLD, 80); 
-        Font button_font = new Font("Monospaced", Font.PLAIN, 40);
+        Font button_font = new Font("Monospaced", Font.PLAIN, 30);
 
         //Menu bar
         this.setJMenuBar(this.initMenuBar());
