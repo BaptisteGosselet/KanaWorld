@@ -7,6 +7,7 @@ import Model.FormatQuestion.FQ_AlphaToHiragana;
 import Model.FormatQuestion.FQ_AlphaToKana;
 import Model.FormatQuestion.FQ_AlphaToKatakana;
 import Model.FormatQuestion.FQ_HiraganaToAlpha;
+import Model.FormatQuestion.FQ_HiraganaVsKatakana;
 import Model.FormatQuestion.FQ_KanaToAlpha;
 import Model.FormatQuestion.FQ_KatakanaToAlpha;
 import Model.FormatQuestion.FormatQuestion;
@@ -241,7 +242,7 @@ public class IGKana extends JFrame implements KanaView {
         else if(format.equals("atk")) fq = new FQ_AlphaToKatakana();
         else if(format.equals("at*")) fq = new FQ_AlphaToKana();
         else if(format.equals("*ta")) fq = new FQ_KanaToAlpha();
-        else if(format.equals("hvk")) System.out.println("Format : Hiragana <-> Katakana");
+        else if(format.equals("hvk")) fq = new FQ_HiraganaVsKatakana();
         
 
         //Mode
