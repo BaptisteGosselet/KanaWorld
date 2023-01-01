@@ -32,9 +32,9 @@ Les Kanas sont composés en deux tableaux de caractères : les Hiraganas et les 
 ### Les modes de jeu
 
 Ce projet propose 3 principaux modes de jeux : 
-- Mode Complet : Tous les caractères peuvent être tirés dans la question
-- Mode Progressif : Le jeu commencent avec les premiers caractères (a, i, u, e, o) et ajoute un caractère toutes les 5 bonnes réponses consécutives (d'abord ka, puis ki, ku, ke, ko, sa, shi, ...) 
-- Mode Selectif : L'utilisateur peut choisir une ligne de kana, par exemple (ta, chi, tsu, te, to) ou (na, ni, nu, ne, no) et le questionnaire tourne en boucle avec ces lettres.
+- **Mode Complet** : Tous les caractères peuvent être tirés dans la question
+- **Mode Progressif** : Le jeu commencent avec les premiers caractères (a, i, u, e, o) et ajoute un caractère toutes les 5 bonnes réponses consécutives (d'abord ka, puis ki, ku, ke, ko, sa, shi, ...) 
+- **Mode Selectif** : L'utilisateur peut choisir une ligne de kana, par exemple (ta, chi, tsu, te, to) ou (na, ni, nu, ne, no) et le questionnaire tourne en boucle avec ces lettres.
 
 ### Les formats de question
 
@@ -48,3 +48,4 @@ Le jeu propose également différents formats de questions :
 ## Présentation technique
 
 A rédiger...<br>
+
