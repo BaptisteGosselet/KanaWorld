@@ -41,7 +41,7 @@ public abstract class QuestionController {
         }
 
 		for (int i = 0; i < copy.length; i++) {
-			int randomIndexToSwap = rand.nextInt(availableLetters.length-1);
+			int randomIndexToSwap = rand.nextInt(arrayToShuffle.length-1);
             Letter temp = copy[randomIndexToSwap];
 			copy[randomIndexToSwap] = copy[i];
 			copy[i] = temp;
