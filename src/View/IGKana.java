@@ -2,6 +2,7 @@ package View;
 import javax.swing.*;
 
 import Controller.QC_Complete;
+import Controller.QC_Selection;
 import Controller.QuestionController;
 import Model.FormatQuestion.FQ_AlphaToHiragana;
 import Model.FormatQuestion.FQ_AlphaToKana;
@@ -152,20 +153,10 @@ public class IGKana extends JFrame implements KanaView {
         modeGroup.add(selectiveMode_m); 
         mode.add(selectiveMode_m);
 
-        JRadioButtonMenuItem selectiveMode_y = new JRadioButtonMenuItem("Selectif : y"); 
-        selectiveMode_y.setActionCommand("select_y");
-        modeGroup.add(selectiveMode_y); 
-        mode.add(selectiveMode_y);
-
         JRadioButtonMenuItem selectiveMode_r = new JRadioButtonMenuItem("Selectif : r"); 
         selectiveMode_r.setActionCommand("select_r");
         modeGroup.add(selectiveMode_r); 
         mode.add(selectiveMode_r);
-
-        JRadioButtonMenuItem selectiveMode_w = new JRadioButtonMenuItem("Selectif : w"); 
-        selectiveMode_w.setActionCommand("select_w");
-        modeGroup.add(selectiveMode_w); 
-        mode.add(selectiveMode_w);
         
         progressiveMode.setSelected(true);
 
@@ -249,16 +240,14 @@ public class IGKana extends JFrame implements KanaView {
         if(mode.equals("progressive")) System.out.println("Mode : Progressif");
         else if(mode.equals("complete")) this.questionController = new QC_Complete(this,fq);
 
-        else if(mode.equals("select_a")) System.out.println("Mode : Selection a");
-        else if(mode.equals("select_k")) System.out.println("Mode : Selection k");
-        else if(mode.equals("select_s")) System.out.println("Mode : Selection s");
-        else if(mode.equals("select_t")) System.out.println("Mode : Selection t");
-        else if(mode.equals("select_n")) System.out.println("Mode : Selection n");
-        else if(mode.equals("select_h")) System.out.println("Mode : Selection h");
-        else if(mode.equals("select_m")) System.out.println("Mode : Selection m");
-        else if(mode.equals("select_y")) System.out.println("Mode : Selection y");
-        else if(mode.equals("select_r")) System.out.println("Mode : Selection r");
-        else if(mode.equals("select_w")) System.out.println("Mode : Selection w");
+        else if(mode.equals("select_a")) this.questionController = new QC_Selection(this, fq, 0, 5);
+        else if(mode.equals("select_k")) this.questionController = new QC_Selection(this, fq, 5, 10);
+        else if(mode.equals("select_s")) this.questionController = new QC_Selection(this, fq, 10, 15);
+        else if(mode.equals("select_t")) this.questionController = new QC_Selection(this, fq, 15, 20);
+        else if(mode.equals("select_n")) this.questionController = new QC_Selection(this, fq, 20, 25);
+        else if(mode.equals("select_h")) this.questionController = new QC_Selection(this, fq, 25, 30);
+        else if(mode.equals("select_m")) this.questionController = new QC_Selection(this, fq, 30, 35);
+        else if(mode.equals("select_r")) this.questionController = new QC_Selection(this, fq, 38, 43);
 
 
         this.questionController.generateQuestion();
