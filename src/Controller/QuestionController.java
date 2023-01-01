@@ -13,7 +13,7 @@ public abstract class QuestionController {
 
     protected Letter[] availableLetters;
 
-    private Question currentQuestion;
+    protected Question currentQuestion;
 
     public QuestionController(KanaView _kview, FormatQuestion _formatQ){
         this.kview = _kview;

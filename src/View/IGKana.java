@@ -2,6 +2,7 @@ package View;
 import javax.swing.*;
 
 import Controller.QC_Complete;
+import Controller.QC_Progressive;
 import Controller.QC_Selection;
 import Controller.QuestionController;
 import Model.FormatQuestion.FQ_AlphaToHiragana;
@@ -237,7 +238,7 @@ public class IGKana extends JFrame implements KanaView {
         
 
         //Mode
-        if(mode.equals("progressive")) System.out.println("Mode : Progressif");
+        if(mode.equals("progressive")) this.questionController = new QC_Progressive(this, fq);
         else if(mode.equals("complete")) this.questionController = new QC_Complete(this,fq);
 
         else if(mode.equals("select_a")) this.questionController = new QC_Selection(this, fq, 0, 5);
