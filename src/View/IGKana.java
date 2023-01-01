@@ -1,9 +1,15 @@
+package View;
 import javax.swing.*;
+
+import Controller.QC_Complete;
+import Controller.QuestionController;
+import Model.FormatQuestion.FQ_HiraganaToAlpha;
+import Model.FormatQuestion.FormatQuestion;
 
 import java.awt.*;
 import java.awt.event.*;
 
-public class IGKana extends JFrame{
+public class IGKana extends JFrame implements KanaView {
 
     class PauseThread extends Thread{
         public void run() {
@@ -12,7 +18,7 @@ public class IGKana extends JFrame{
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            setQuestion();
+            questionController.generateQuestion();
         }
     }
 
@@ -23,6 +29,7 @@ public class IGKana extends JFrame{
     ButtonGroup modeGroup;
     ButtonGroup formatGroup;
 
+    QuestionController questionController;
 
     public IGKana(){
 
@@ -204,7 +211,7 @@ public class IGKana extends JFrame{
                 public void mouseEntered(MouseEvent e) {}
                 public void mouseExited(MouseEvent e) {}
                 public void mousePressed(MouseEvent e) {
-                    play();
+                    launchNewController();
                 }
                 public void mouseReleased(MouseEvent e) {}
         });
@@ -216,13 +223,26 @@ public class IGKana extends JFrame{
         return menubar;
     }
 
-    public void play(){
+    public void launchNewController(){
         String mode = this.modeGroup.getSelection().getActionCommand();
         String format = this.formatGroup.getSelection().getActionCommand();
 
+        FormatQuestion fq = new FQ_HiraganaToAlpha();
+
+        //Format
+        if(format.equals("hta")) fq = new FQ_HiraganaToAlpha();
+        else if(format.equals("ath")) System.out.println("Format : Alpha -> Hiragana");
+        else if(format.equals("kta")) System.out.println("Format : Katakana -> Alpha");
+        else if(format.equals("atk")) System.out.println("Format : Alpha -> Katakana");
+        else if(format.equals("at*")) System.out.println("Format : Alpha -> Kana");
+        else if(format.equals("*ta")) System.out.println("Format : Kana -> Alpha");
+        else if(format.equals("hvk")) System.out.println("Format : Hiragana <-> Katakana");
+        
+
         //Mode
         if(mode.equals("progressive")) System.out.println("Mode : Progressif");
-        else if(mode.equals("complete")) System.out.println("Mode : Complet");
+        else if(mode.equals("complete")) this.questionController = new QC_Complete(this,fq);
+
         else if(mode.equals("select_a")) System.out.println("Mode : Selection a");
         else if(mode.equals("select_k")) System.out.println("Mode : Selection k");
         else if(mode.equals("select_s")) System.out.println("Mode : Selection s");
@@ -234,21 +254,35 @@ public class IGKana extends JFrame{
         else if(mode.equals("select_r")) System.out.println("Mode : Selection r");
         else if(mode.equals("select_w")) System.out.println("Mode : Selection w");
 
-        //Format
-        if(format.equals("hta")) System.out.println("Format : Hiragana -> Alpha");
-        else if(format.equals("ath")) System.out.println("Format : Alpha -> Hiragana");
-        else if(format.equals("kta")) System.out.println("Format : Katakana -> Alpha");
-        else if(format.equals("atk")) System.out.println("Format : Alpha -> Katakana");
-        else if(format.equals("at*")) System.out.println("Format : Alpha -> Kana");
-        else if(format.equals("*ta")) System.out.println("Format : Kana -> Alpha");
-        else if(format.equals("hvk")) System.out.println("Format : Hiragana <-> Katakana");
 
-        setQuestion();
-
+        this.questionController.generateQuestion();
     }
 
     public void clickOnButton(int n){
-        System.out.println(this.buttons[n].getText());
+        sendAnswerToController(n);
+    }
+
+    public void sendAnswerToController(int n){
+        this.questionController.sendAnswer(n);
+    }
+
+    public void displayQuestion(String askedLetter, String[] answers){
+        
+        //Refresh GUI
+        for(int i=0;i<this.buttons.length;i++){
+            buttons[i].setText("");
+            buttons[i].setEnabled(true);
+            buttons[i].setBackground(buttonColor);
+        }
+        
+        letterLabel.setText(askedLetter);
+        buttons[0].setText(answers[0]);
+        buttons[1].setText(answers[1]);
+        buttons[2].setText(answers[2]);
+        buttons[3].setText(answers[3]);
+    }
+
+    public void revealGoodAnswer(int n){
         
         //colorize button
         for(int i=0;i<buttons.length;i++){
@@ -261,22 +295,6 @@ public class IGKana extends JFrame{
         PauseThread rt = new PauseThread();
         rt.start();
     }
-
-    public void setQuestion(){
-        for(int i=0;i<this.buttons.length;i++){
-            buttons[i].setText("");
-            buttons[i].setEnabled(true);
-            buttons[i].setBackground(buttonColor);
-        }
-
-        letterLabel.setText("あ");
-        buttons[0].setText("e");
-        buttons[1].setText("a");
-        buttons[2].setText("i");
-        buttons[3].setText("u");
-    }
-
-
 
 
 }
