@@ -54,7 +54,7 @@ public class IGKana extends JFrame implements KanaView {
         Color frame_backgound_color = new Color(245,245,220);
         Color color_of_border = new Color(93,56,36);
         Color background_color_of_border = Color.WHITE;
-        Font letter_in_borer_font = new Font("Monospaced", Font.BOLD, 80); 
+        Font letter_in_border_font = new Font("Monospaced", Font.BOLD, 74); 
         Font button_font = new Font("Monospaced", Font.PLAIN, 30);
 
         //Menu bar
@@ -68,8 +68,8 @@ public class IGKana extends JFrame implements KanaView {
         panel.setBackground(background_color_of_border);
         panel.setBounds(180,30,150,150);
         panel.add(this.letterLabel);
-        this.letterLabel.setFont(letter_in_borer_font);
-        this.letterLabel.setBounds(35,30,100,100);
+        this.letterLabel.setFont(letter_in_border_font);
+        this.letterLabel.setBounds(35,30,150,100);
         c.add(panel);
 
         //Answers panel
@@ -271,7 +271,18 @@ public class IGKana extends JFrame implements KanaView {
             buttons[i].setBackground(buttonColor);
         }
         
+        if(askedLetter.length() == 1){
+            this.letterLabel.setBounds(35,30,150,100);
+        }
+        else if(askedLetter.length() == 2){
+            this.letterLabel.setBounds(30,30,150,100);
+        }
+        else if(askedLetter.length() == 3){
+            this.letterLabel.setBounds(7,30,150,100);
+        }
+
         letterLabel.setText(askedLetter);
+
         buttons[0].setText(answers[0]);
         buttons[1].setText(answers[1]);
         buttons[2].setText(answers[2]);
