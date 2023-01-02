@@ -1,4 +1,4 @@
-import View.IGKana;
+import View.*;
 
 public class Main {
     
