@@ -22,7 +22,7 @@ public class IGKana extends JFrame implements KanaView {
     class PauseThread extends Thread{
         public void run() {
             try {
-                Thread.sleep(2000);
+                Thread.sleep(1500);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -209,7 +209,8 @@ public class IGKana extends JFrame implements KanaView {
                 public void mouseEntered(MouseEvent e) {}
                 public void mouseExited(MouseEvent e) {}
                 public void mousePressed(MouseEvent e) {
-                    launchNewController();
+                    setController(generateController());
+                    launchController();
                 }
                 public void mouseReleased(MouseEvent e) {}
         });
@@ -221,7 +222,7 @@ public class IGKana extends JFrame implements KanaView {
         return menubar;
     }
 
-    public void launchNewController(){
+    public QuestionController generateController(){
         String mode = this.modeGroup.getSelection().getActionCommand();
         String format = this.formatGroup.getSelection().getActionCommand();
 
@@ -238,20 +239,19 @@ public class IGKana extends JFrame implements KanaView {
         
 
         //Mode
-        if(mode.equals("progressive")) this.questionController = new QC_Progressive(this, fq);
-        else if(mode.equals("complete")) this.questionController = new QC_Complete(this,fq);
+        if(mode.equals("progressive")) return new QC_Progressive(this, fq);
+        else if(mode.equals("complete")) return new QC_Complete(this,fq);
 
-        else if(mode.equals("select_a")) this.questionController = new QC_Selection(this, fq, 0, 5);
-        else if(mode.equals("select_k")) this.questionController = new QC_Selection(this, fq, 5, 10);
-        else if(mode.equals("select_s")) this.questionController = new QC_Selection(this, fq, 10, 15);
-        else if(mode.equals("select_t")) this.questionController = new QC_Selection(this, fq, 15, 20);
-        else if(mode.equals("select_n")) this.questionController = new QC_Selection(this, fq, 20, 25);
-        else if(mode.equals("select_h")) this.questionController = new QC_Selection(this, fq, 25, 30);
-        else if(mode.equals("select_m")) this.questionController = new QC_Selection(this, fq, 30, 35);
-        else if(mode.equals("select_r")) this.questionController = new QC_Selection(this, fq, 38, 43);
-
-
-        this.questionController.generateQuestion();
+        else if(mode.equals("select_a")) return new QC_Selection(this, fq, 0, 5);
+        else if(mode.equals("select_k")) return new QC_Selection(this, fq, 5, 10);
+        else if(mode.equals("select_s")) return new QC_Selection(this, fq, 10, 15);
+        else if(mode.equals("select_t")) return new QC_Selection(this, fq, 15, 20);
+        else if(mode.equals("select_n")) return new QC_Selection(this, fq, 20, 25);
+        else if(mode.equals("select_h")) return new QC_Selection(this, fq, 25, 30);
+        else if(mode.equals("select_m")) return new QC_Selection(this, fq, 30, 35);
+        else if(mode.equals("select_r")) return new QC_Selection(this, fq, 38, 43);
+        
+        return new QC_Complete(this, fq);
     }
 
     public void clickOnButton(int n){
@@ -290,6 +290,14 @@ public class IGKana extends JFrame implements KanaView {
 
         PauseThread rt = new PauseThread();
         rt.start();
+    }
+
+    public void launchController(){
+        this.questionController.generateQuestion();
+    }
+
+    public void setController(QuestionController qc){
+        this.questionController = qc;        
     }
 
 

@@ -8,8 +8,8 @@ import Model.FormatQuestion.FormatQuestion;
 import View.KanaView;
 
 public abstract class QuestionController {
-    private KanaView kview;
-    private FormatQuestion formatQ;
+    protected KanaView kview;
+    protected FormatQuestion formatQ;
 
     protected Letter[] availableLetters;
 

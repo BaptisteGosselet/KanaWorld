@@ -1,5 +1,7 @@
 package Controller;
 
+import javax.sound.midi.SysexMessage;
+
 import Model.Letter;
 import Model.LetterFactory;
 import Model.FormatQuestion.FormatQuestion;
@@ -8,25 +10,28 @@ import View.KanaView;
 public class QC_Progressive extends QuestionController {
 
     int cpt = 0;
-    int nbLetter;
-    boolean complete = false;
+    int begin;
+    int end;
 
     public QC_Progressive(KanaView _kview, FormatQuestion _formatQ) {
         super(_kview, _formatQ);
     }
 
     public void initAvailableLetters() {
-        if(nbLetter == 0){
-            nbLetter = 5;
+        if(end == 0){
+            begin = 0;
+            end = 5;
         }
 
         Letter[] letters = LetterFactory.getAllLetters();
-        this.availableLetters = new Letter[nbLetter];
-        for(int i=0;i<nbLetter;i++){
-            this.availableLetters[i] = letters[i];
+        this.availableLetters = new Letter[end-begin];
+        for(int i=begin;i<end;i++){
+            this.availableLetters[i-begin] = letters[i];
         }
         
-        if(nbLetter == letters.length) complete = true;
+        if(end == letters.length){
+            this.kview.setController(new QC_Complete(this.kview, this.formatQ));
+        }
     }
 
     @Override
@@ -53,10 +58,9 @@ public class QC_Progressive extends QuestionController {
     }
 
     public void addLetter(){
-        if(!complete){
-            nbLetter++;
-            initAvailableLetters();
-        }
+        begin++;
+        end++;
+        initAvailableLetters();
     }
 
 
