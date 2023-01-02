@@ -47,5 +47,30 @@ Le jeu propose également différents formats de questions :
 
 ## Présentation technique
 
-A rédiger...<br>
+### Partie View
+
+L'interface KanaView permet d'implémenter plusieurs interfaces graphiques à ce programme. Cette partie gère l'interaction avec l'utilisateur : elle affiche les informations, et les reçoit pour les envoyer au Controller.
+
+ La version IGKana utilise Java Swing, elle affiche le caractère en question dans un label central, et les propositions de réponse dans 4 boutons alignés. Le clic d'un bouton appelle la méthode **clickButton(int n)** avec n l'indentifiant du bouton, ce qui envoit la réponse sélectionnée au reste du programme. 
+
+ Lorsqu'une réponse est sélectionnée les boutons s'illuminent en rouge ou en vert pour indiquer la solution (avec **revealGoodAnswer()**). Pour ajouter un délai entre le moment de la solution et la question suivante j'utilise un thread. Un **wait** classique interrompt le programme et donc le dessin du GUI. 
+
+![View UML](./uml/View.png)
+
+### Partie Model
+
+Les lettres sont représentées par une classe **Letter** avec 3 champs String pour chacune des versions. Une classe abstraite **LetterFactory** contient un tableau de toutes les lettres. 
+
+Pour les questions, une classe comporte une **askedLetter** et un tableau de réponses **answers**.
+
+Enfin, la partie modèle comporte les différents formats de question. Ils comportent chacun une méthodes **getfAskedLetter()** et **getfAnswers()** permettant de récupérer un String de la lettre formatée selon le format de question choisi.
+
+![Model UML](./uml/Model.png)
+
+### Partie Controller
+
+Les Controller représentent les modes de jeu. Ils comportent un tableau de lettres à questionner et des méthodes pour générer des questions et en analyser les réponses. Le Controller communique avec une View pour intéragir avec l'utilisateur. 
+
+![Controller UML](./uml/Controller.png)
+
 
