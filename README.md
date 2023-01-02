@@ -77,3 +77,4 @@ Les Controller représentent les modes de jeu. Ils comportent un tableau de lett
 
 - Ajouter les kanas variants : l'équivalent de nos accents : par exemple か (ka) et が (ga).
 - Ajouter les modes de jeux pour ces variants.
+- Ajouter différentes polices d'écritures (diversifier la lecture)
