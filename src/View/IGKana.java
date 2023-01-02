@@ -102,7 +102,7 @@ public class IGKana extends JFrame implements KanaView {
         this.setVisible(true);
     }
 
-    public JMenuBar initMenuBar(){
+    private JMenuBar initMenuBar(){
         JMenuBar menubar = new JMenuBar();
 
         //Mode (Progressive : aiueo+1 ; Selective a/h/s/...; Complete)

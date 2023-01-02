@@ -24,8 +24,6 @@ public class QC_Progressive extends QuestionController {
         this.availableLetters = new Letter[nbLetter];
         for(int i=0;i<nbLetter;i++){
             this.availableLetters[i] = letters[i];
-
-            System.out.println(availableLetters[i].getAlpha());
         }
         
         if(nbLetter == letters.length) complete = true;
