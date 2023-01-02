@@ -73,4 +73,7 @@ Les Controller représentent les modes de jeu. Ils comportent un tableau de lett
 
 ![Controller UML](./uml/Controller.png)
 
+## Fonctionnalités à implémenter
 
+- Ajouter les kanas variants : l'équivalent de nos accents : par exemple か (ka) et が (ga).
+- Ajouter les modes de jeux pour ces variants.
