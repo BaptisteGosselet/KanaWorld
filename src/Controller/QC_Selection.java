@@ -24,7 +24,6 @@ public class QC_Selection extends QuestionController {
         Letter[] letters = LetterFactory.getAllLetters();
         this.availableLetters = new Letter[end-begin];
         for(int i=begin;i<end;i++){
-            System.out.println(letters[i].getAlpha());
             this.availableLetters[i-begin] = letters[i];
         }
 

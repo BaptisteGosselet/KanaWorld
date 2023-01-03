@@ -118,45 +118,25 @@ public class IGKana extends JFrame implements KanaView {
         modeGroup.add(trueCompleteMode); 
         mode.add(trueCompleteMode);
 
-        JRadioButtonMenuItem selectiveMode_a = new JRadioButtonMenuItem("Selectif : a"); 
-        selectiveMode_a.setActionCommand("select_a");
-        modeGroup.add(selectiveMode_a); 
-        mode.add(selectiveMode_a);
+        JRadioButtonMenuItem selectiveMode_ak = new JRadioButtonMenuItem("Selectif : a / k"); 
+        selectiveMode_ak.setActionCommand("select_ak");
+        modeGroup.add(selectiveMode_ak); 
+        mode.add(selectiveMode_ak);
 
-        JRadioButtonMenuItem selectiveMode_k = new JRadioButtonMenuItem("Selectif : k"); 
-        selectiveMode_k.setActionCommand("select_k");
-        modeGroup.add(selectiveMode_k); 
-        mode.add(selectiveMode_k);
+        JRadioButtonMenuItem selectiveMode_st = new JRadioButtonMenuItem("Selectif : s / t"); 
+        selectiveMode_st.setActionCommand("select_st");
+        modeGroup.add(selectiveMode_st); 
+        mode.add(selectiveMode_st);
 
-        JRadioButtonMenuItem selectiveMode_s = new JRadioButtonMenuItem("Selectif : s"); 
-        selectiveMode_s.setActionCommand("select_s");
-        modeGroup.add(selectiveMode_s); 
-        mode.add(selectiveMode_s);
+        JRadioButtonMenuItem selectiveMode_nh = new JRadioButtonMenuItem("Selectif : n / h"); 
+        selectiveMode_nh.setActionCommand("select_nh");
+        modeGroup.add(selectiveMode_nh); 
+        mode.add(selectiveMode_nh);
 
-        JRadioButtonMenuItem selectiveMode_t = new JRadioButtonMenuItem("Selectif : t"); 
-        selectiveMode_t.setActionCommand("select_t");
-        modeGroup.add(selectiveMode_t); 
-        mode.add(selectiveMode_t);
-
-        JRadioButtonMenuItem selectiveMode_n = new JRadioButtonMenuItem("Selectif : n"); 
-        selectiveMode_n.setActionCommand("select_n");
-        modeGroup.add(selectiveMode_n); 
-        mode.add(selectiveMode_n);
-
-        JRadioButtonMenuItem selectiveMode_h = new JRadioButtonMenuItem("Selectif : h"); 
-        selectiveMode_h.setActionCommand("select_h");
-        modeGroup.add(selectiveMode_h); 
-        mode.add(selectiveMode_h);
-
-        JRadioButtonMenuItem selectiveMode_m = new JRadioButtonMenuItem("Selectif : m"); 
-        selectiveMode_m.setActionCommand("select_m");
-        modeGroup.add(selectiveMode_m); 
-        mode.add(selectiveMode_m);
-
-        JRadioButtonMenuItem selectiveMode_r = new JRadioButtonMenuItem("Selectif : r"); 
-        selectiveMode_r.setActionCommand("select_r");
-        modeGroup.add(selectiveMode_r); 
-        mode.add(selectiveMode_r);
+        JRadioButtonMenuItem selectiveMode_mr = new JRadioButtonMenuItem("Selectif : m / r"); 
+        selectiveMode_mr.setActionCommand("select_mr");
+        modeGroup.add(selectiveMode_mr); 
+        mode.add(selectiveMode_mr);
         
         progressiveMode.setSelected(true);
 
@@ -242,14 +222,10 @@ public class IGKana extends JFrame implements KanaView {
         else if(mode.equals("complete")) return new QC_Selection(this,fq,0,46);
         else if(mode.equals("trueComplete")) return new QC_Selection(this, fq,0,71);
         else if(mode.equals("variants")) return new QC_Selection(this, fq, 46,71);
-        else if(mode.equals("select_a")) return new QC_Selection(this, fq, 0, 5);
-        else if(mode.equals("select_k")) return new QC_Selection(this, fq, 5, 10);
-        else if(mode.equals("select_s")) return new QC_Selection(this, fq, 10, 15);
-        else if(mode.equals("select_t")) return new QC_Selection(this, fq, 15, 20);
-        else if(mode.equals("select_n")) return new QC_Selection(this, fq, 20, 25);
-        else if(mode.equals("select_h")) return new QC_Selection(this, fq, 25, 30);
-        else if(mode.equals("select_m")) return new QC_Selection(this, fq, 30, 35);
-        else if(mode.equals("select_r")) return new QC_Selection(this, fq, 38, 43);
+        else if(mode.equals("select_ak")) return new QC_Selection(this, fq, 0, 10);
+        else if(mode.equals("select_st")) return new QC_Selection(this, fq, 10, 20);
+        else if(mode.equals("select_nh")) return new QC_Selection(this, fq, 20, 30);
+        else if(mode.equals("select_mr")) return new QC_Selection(this, fq, 30, 43);
         
         return new QC_Selection(this,fq,0,46);
     }
