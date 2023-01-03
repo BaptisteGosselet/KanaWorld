@@ -95,7 +95,6 @@ public class IGKana extends JFrame implements KanaView {
     private JMenuBar initMenuBar(){
         JMenuBar menubar = new JMenuBar();
 
-        //Mode (Progressive : aiueo+1 ; Selective a/h/s/...; Complete)
         JMenu mode = new JMenu("Mode");
         this.modeGroup = new ButtonGroup();
 
@@ -104,10 +103,20 @@ public class IGKana extends JFrame implements KanaView {
         modeGroup.add(progressiveMode); 
         mode.add(progressiveMode);
 
-        JRadioButtonMenuItem completeMode = new JRadioButtonMenuItem("Complet"); 
+        JRadioButtonMenuItem completeMode = new JRadioButtonMenuItem("Complet Simple"); 
         completeMode.setActionCommand("complete");
         modeGroup.add(completeMode); 
         mode.add(completeMode);
+
+        JRadioButtonMenuItem variantMode = new JRadioButtonMenuItem("Variants"); 
+        variantMode.setActionCommand("variants");
+        modeGroup.add(variantMode); 
+        mode.add(variantMode);
+
+        JRadioButtonMenuItem trueCompleteMode = new JRadioButtonMenuItem("Complet Variants"); 
+        trueCompleteMode.setActionCommand("trueComplete");
+        modeGroup.add(trueCompleteMode); 
+        mode.add(trueCompleteMode);
 
         JRadioButtonMenuItem selectiveMode_a = new JRadioButtonMenuItem("Selectif : a"); 
         selectiveMode_a.setActionCommand("select_a");
@@ -231,7 +240,8 @@ public class IGKana extends JFrame implements KanaView {
         //Mode
         if(mode.equals("progressive")) return new QC_Progressive(this, fq);
         else if(mode.equals("complete")) return new QC_Selection(this,fq,0,46);
-
+        else if(mode.equals("trueComplete")) return new QC_Selection(this, fq,0,71);
+        else if(mode.equals("variants")) return new QC_Selection(this, fq, 46,71);
         else if(mode.equals("select_a")) return new QC_Selection(this, fq, 0, 5);
         else if(mode.equals("select_k")) return new QC_Selection(this, fq, 5, 10);
         else if(mode.equals("select_s")) return new QC_Selection(this, fq, 10, 15);

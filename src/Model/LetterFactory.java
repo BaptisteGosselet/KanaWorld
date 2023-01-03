@@ -50,12 +50,40 @@ public abstract class LetterFactory {
         new Letter("ro", "ろ", "ロ"),
         new Letter("wa", "わ", "ワ"),
         new Letter("wo", "を", "ヲ"),
-        new Letter("n", "ん", "ン")
+        new Letter("n", "ん", "ン"),
+
+        //(Han)Dakuten
+        new Letter("ga", "が ", "ガ"),
+        new Letter("gi", "ぎ", "ギ"),
+        new Letter("gu", "ぐ", "グ"),
+        new Letter("ge", "げ", "ゲ"),
+        new Letter("go", "ご", "ゴ"),
+        new Letter("za", "ざ", "ザ"),
+        new Letter("ji", "じ", "ジ"),
+        new Letter("zu", "ず", "ズ"),
+        new Letter("ze", "ぜ ", "ゼ"),
+        new Letter("zo", "ぞ", "ゾ"),
+        new Letter("da", "だ", "ダ"),
+        new Letter("dji", "ぢ", "ヂ"),
+        new Letter("dzu", "づ", "ヅ"),
+        new Letter("de", "で", "デ"),
+        new Letter("do", "ど ", "ド"),
+        new Letter("ba", "ば", "バ"),
+        new Letter("bi", "び", "ビ"),
+        new Letter("bu", "ぶ", "ブ"),
+        new Letter("be", "べ", "ベ"),
+        new Letter("bo", "ぼ", "ボ"),
+        new Letter("pa", "ぱ", "パ"),
+        new Letter("pi", "ぴ", "ピ"),
+        new Letter("pu", "ぷ", "プ"),
+        new Letter("pe", "ぺ ", "ペ"),
+        new Letter("po", "ぽ", "ポ"),  
     };
-    
+
     public static Letter[] getAllLetters(){
         return letters;
     }
+
 
 
 
