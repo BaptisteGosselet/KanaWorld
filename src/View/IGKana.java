@@ -144,32 +144,32 @@ public class IGKana extends JFrame implements KanaView {
         JMenu format = new JMenu("Format");
         this.formatGroup = new ButtonGroup();
 
-        JRadioButtonMenuItem hiraganaToAlpha = new JRadioButtonMenuItem("Hiragana -> Alpha"); 
+        JRadioButtonMenuItem hiraganaToAlpha = new JRadioButtonMenuItem("Hiragana -> Romanji"); 
         hiraganaToAlpha.setActionCommand("hta");
         formatGroup.add(hiraganaToAlpha);
         format.add(hiraganaToAlpha);
 
-        JRadioButtonMenuItem alphaToHiragana = new JRadioButtonMenuItem("Alpha -> Hiragana"); 
+        JRadioButtonMenuItem alphaToHiragana = new JRadioButtonMenuItem("Romanji -> Hiragana"); 
         alphaToHiragana.setActionCommand("ath");
         formatGroup.add(alphaToHiragana);
         format.add(alphaToHiragana);
 
-        JRadioButtonMenuItem katakanaToAlpha = new JRadioButtonMenuItem("Katakana -> Alpha"); 
+        JRadioButtonMenuItem katakanaToAlpha = new JRadioButtonMenuItem("Katakana -> Romanji"); 
         katakanaToAlpha.setActionCommand("kta");
         formatGroup.add(katakanaToAlpha);
         format.add(katakanaToAlpha);
 
-        JRadioButtonMenuItem alphaToKatakana = new JRadioButtonMenuItem("Alpha -> Katakana"); 
+        JRadioButtonMenuItem alphaToKatakana = new JRadioButtonMenuItem("Romanji -> Katakana"); 
         alphaToKatakana.setActionCommand("atk");
         formatGroup.add(alphaToKatakana);
         format.add(alphaToKatakana);
 
-        JRadioButtonMenuItem AlphaToKana = new JRadioButtonMenuItem("Alpha -> Kana"); 
+        JRadioButtonMenuItem AlphaToKana = new JRadioButtonMenuItem("Romanji -> Kana"); 
         AlphaToKana.setActionCommand("at*");
         formatGroup.add(AlphaToKana);
         format.add(AlphaToKana);
 
-        JRadioButtonMenuItem KanaToAlpha = new JRadioButtonMenuItem("Kana -> Alpha"); 
+        JRadioButtonMenuItem KanaToAlpha = new JRadioButtonMenuItem("Kana -> Romanji"); 
         KanaToAlpha.setActionCommand("*ta");
         formatGroup.add(KanaToAlpha);
         format.add(KanaToAlpha);
