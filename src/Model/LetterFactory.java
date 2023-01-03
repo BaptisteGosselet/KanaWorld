@@ -64,7 +64,6 @@ public abstract class LetterFactory {
         new Letter("ze", "ぜ ", "ゼ"),
         new Letter("zo", "ぞ", "ゾ"),
         new Letter("da", "だ", "ダ"),
-        new Letter("dji", "ぢ", "ヂ"),
         new Letter("dzu", "づ", "ヅ"),
         new Letter("de", "で", "デ"),
         new Letter("do", "ど ", "ド"),

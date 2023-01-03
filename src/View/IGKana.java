@@ -220,8 +220,8 @@ public class IGKana extends JFrame implements KanaView {
         //Mode
         if(mode.equals("progressive")) return new QC_Progressive(this, fq);
         else if(mode.equals("complete")) return new QC_Selection(this,fq,0,46);
-        else if(mode.equals("trueComplete")) return new QC_Selection(this, fq,0,71);
-        else if(mode.equals("variants")) return new QC_Selection(this, fq, 46,71);
+        else if(mode.equals("trueComplete")) return new QC_Selection(this, fq,0,70);
+        else if(mode.equals("variants")) return new QC_Selection(this, fq, 46,70);
         else if(mode.equals("select_ak")) return new QC_Selection(this, fq, 0, 10);
         else if(mode.equals("select_st")) return new QC_Selection(this, fq, 10, 20);
         else if(mode.equals("select_nh")) return new QC_Selection(this, fq, 20, 30);
