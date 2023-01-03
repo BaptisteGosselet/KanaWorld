@@ -72,9 +72,3 @@ Enfin, la partie modèle comporte les différents formats de question. Ils compo
 Les Controller représentent les modes de jeu. Ils comportent un tableau de lettres à questionner et des méthodes pour générer des questions et en analyser les réponses. Le Controller communique avec une View pour intéragir avec l'utilisateur. 
 
 ![Controller UML](./uml/Controller.png)
-
-## Fonctionnalités à implémenter
-
-- Ajouter les kanas variants : l'équivalent de nos accents : par exemple か (ka) et が (ga).
-- Ajouter les modes de jeux pour ces variants.
-- Ajouter différentes polices d'écritures (diversifier la lecture)
