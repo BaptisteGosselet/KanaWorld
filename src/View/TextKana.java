@@ -67,7 +67,7 @@ public class TextKana implements KanaView {
 
         n = intUserInput(0, 9);
         QuestionController qc;
-        if(n==0) qc = new QC_Complete(this, fq);
+        if(n==0) qc = new QC_Selection(this, fq,0,46);
         else if(n==1) qc = new QC_Progressive(this, fq);
         else if(n==2) qc = new QC_Selection(this, fq, 0, 5);
         else if(n==3) qc = new QC_Selection(this, fq, 5, 10);

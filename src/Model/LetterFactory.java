@@ -3,6 +3,8 @@ package Model;
 public abstract class LetterFactory {
     
     private static Letter[] letters = {
+
+        //Gojuon
         new Letter("a", "あ", "ア"),
         new Letter("i", "い", "イ"),
         new Letter("u", "う", "ウ"),
@@ -50,11 +52,7 @@ public abstract class LetterFactory {
         new Letter("wo", "を", "ヲ"),
         new Letter("n", "ん", "ン")
     };
-
-    private static Letter[] variants = {
-        //TODO
-    };
-
+    
     public static Letter[] getAllLetters(){
         return letters;
     }

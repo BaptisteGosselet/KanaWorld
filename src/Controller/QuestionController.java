@@ -18,7 +18,6 @@ public abstract class QuestionController {
     public QuestionController(KanaView _kview, FormatQuestion _formatQ){
         this.kview = _kview;
         this.formatQ = _formatQ;
-        this.initAvailableLetters();
     }
 
     public Letter[] pickFourLetters(){

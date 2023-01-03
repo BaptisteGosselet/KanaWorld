@@ -230,7 +230,7 @@ public class IGKana extends JFrame implements KanaView {
 
         //Mode
         if(mode.equals("progressive")) return new QC_Progressive(this, fq);
-        else if(mode.equals("complete")) return new QC_Complete(this,fq);
+        else if(mode.equals("complete")) return new QC_Selection(this,fq,0,46);
 
         else if(mode.equals("select_a")) return new QC_Selection(this, fq, 0, 5);
         else if(mode.equals("select_k")) return new QC_Selection(this, fq, 5, 10);
@@ -241,7 +241,7 @@ public class IGKana extends JFrame implements KanaView {
         else if(mode.equals("select_m")) return new QC_Selection(this, fq, 30, 35);
         else if(mode.equals("select_r")) return new QC_Selection(this, fq, 38, 43);
         
-        return new QC_Complete(this, fq);
+        return new QC_Selection(this,fq,0,46);
     }
 
     public void clickOnButton(int n){

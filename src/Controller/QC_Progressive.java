@@ -1,7 +1,5 @@
 package Controller;
 
-import javax.sound.midi.SysexMessage;
-
 import Model.Letter;
 import Model.LetterFactory;
 import Model.FormatQuestion.FormatQuestion;
@@ -15,6 +13,7 @@ public class QC_Progressive extends QuestionController {
 
     public QC_Progressive(KanaView _kview, FormatQuestion _formatQ) {
         super(_kview, _formatQ);
+        initAvailableLetters();
     }
 
     public void initAvailableLetters() {
@@ -30,7 +29,7 @@ public class QC_Progressive extends QuestionController {
         }
         
         if(end == letters.length){
-            this.kview.setController(new QC_Complete(this.kview, this.formatQ));
+            this.kview.setController(new QC_Selection(kview,formatQ,0,46));
         }
     }
 
