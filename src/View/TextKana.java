@@ -3,18 +3,8 @@ package View;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import Controller.QC_Complete;
-import Controller.QC_Progressive;
-import Controller.QC_Selection;
-import Controller.QuestionController;
-import Model.FormatQuestion.FQ_AlphaToHiragana;
-import Model.FormatQuestion.FQ_AlphaToKana;
-import Model.FormatQuestion.FQ_AlphaToKatakana;
-import Model.FormatQuestion.FQ_HiraganaToAlpha;
-import Model.FormatQuestion.FQ_HiraganaVsKatakana;
-import Model.FormatQuestion.FQ_KanaToAlpha;
-import Model.FormatQuestion.FQ_KatakanaToAlpha;
-import Model.FormatQuestion.FormatQuestion;
+import Controller.*;
+import Model.FormatQuestion.*;
 
 public class TextKana implements KanaView {
     private QuestionController questionController;
