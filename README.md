@@ -24,7 +24,9 @@ La langue japonaise dispose d'un système d'écriture complexe. Il est composé 
 Les Kana sont composés de deux tableaux de caractères : les hiragana et les katakana, qui représentent une cinquantaine de caractères chacun.
 
 - Tableau des Hiragana
-![Hiragana.jpg]([https://steemitimages.com/DQmbSoeh6Y3ftw7jacSSckEM2sky8jf9snc5ccAqYRjBsBx/Hiragana.jpg](https://japaniste.fr/wp-content/uploads/2017/05/hiragana-tableau-base.png))
+![Hiragana.jpg](https://japaniste.fr/wp-content/uploads/2017/05/hiragana-tableau-base.png)
+
+
 
 ### Les modes de jeu
 
