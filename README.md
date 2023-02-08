@@ -3,7 +3,9 @@
 [![forthebadge](https://forthebadge.com/images/badges/made-with-java.svg)](https://forthebadge.com)
 
 ## Présentation générale 
-Ce projet est un jeu éducatif destiné à l'apprentissage des kanas (alphabet japonais). Cela consiste en un quiz dans lequel un caractère est montré avec 4 propositions de réponses. Le but est de retrouver la lettre correspondante. Le jeu propose plusieurs modes de jeux et formats de questions.  
+Ce projet est un jeu éducatif destiné à l'apprentissage des kanas (alphabet japonais). Cela consiste en un quiz dans lequel un caractère est montré avec 4 propositions de réponses. Le but est de retrouver la lettre correspondante. Le jeu propose plusieurs modes de jeux et formats de questions.
+
+![capture](./img/capture.png)
 
 ## Script  
 
